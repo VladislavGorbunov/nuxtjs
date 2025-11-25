@@ -18,7 +18,7 @@
 }
 
 .logo {
-    font-size: 29px;
+    font-size: 32px;
     font-weight: bold;
     color: #fff;
 }

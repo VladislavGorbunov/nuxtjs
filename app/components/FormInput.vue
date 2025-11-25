@@ -46,8 +46,13 @@
 
     
 
-    <div class="alert alert-primary text-center m-0" v-else>
+    <div class="alert alert-primary text-center mb-3" v-else>
         Получаем информацию пользователя {{ id_user }}...
+    </div>
+
+    <div class="d-flex">
+        <NuxtLink to="/about" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>О сервисе</small></NuxtLink>
+        <NuxtLink to="/info" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>Как это работает?</small></NuxtLink>
     </div>
 
     

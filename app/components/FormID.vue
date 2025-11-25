@@ -33,10 +33,10 @@
     top: -60px;
     width: 170px;
     height: 170px;
-    background: rgb(17, 192, 183);
-    filter: blur(50px);
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 100%, rgba(237, 221, 83, 1) 100%);
+    filter: blur(100px);
     border-radius: 50%;
-    opacity: 0.4;
+    opacity: 0.9;
     z-index: 0;
 }
 
