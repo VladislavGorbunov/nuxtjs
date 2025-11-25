@@ -10,10 +10,18 @@ export default defineNuxtConfig({
     'bootstrap-icons/font/bootstrap-icons.css'
   ],
 
+
+
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      script: [
+        {
+            type: 'text/javascript',
+            src: 'js/bootstrap.js',
+        },
+    ]
     },
   },
 
