@@ -20,7 +20,7 @@
 .form-content {
     background: rgba(0,0,0,0.8);
     backdrop-filter: blur(1px);
-    padding: 35px 55px;
+    padding: 15px 55px 45px 55px;
     border-radius: 20px;
     overflow: hidden;
     min-height: 330px;

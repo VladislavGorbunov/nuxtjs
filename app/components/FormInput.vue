@@ -53,6 +53,7 @@
     <div class="d-flex">
         <NuxtLink to="/about" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>О сервисе</small></NuxtLink>
         <NuxtLink to="/info" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>Как это работает?</small></NuxtLink>
+        <NuxtLink to="/contacts" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>Контакты</small></NuxtLink>
     </div>
 
     
