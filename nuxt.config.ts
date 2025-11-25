@@ -4,5 +4,17 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   pages: true,
   ssr: true,
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css', 
+    'bootstrap/dist/css/bootstrap.min.css',
+    'bootstrap-icons/font/bootstrap-icons.css'
+  ],
+
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
+  },
+  
 })

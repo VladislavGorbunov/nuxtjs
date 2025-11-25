@@ -1,3 +1,4 @@
 <template>
-    Index page
+    <Header />
 </template>   
+
