@@ -1,5 +1,4 @@
-export default defineEventHandler((event) => {
-  return {
-    hello: 'world',
-  }
+export default defineEventHandler(async (event) => {
+  let data = await readBody(event)
+  return { data }
 })

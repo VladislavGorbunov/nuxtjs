@@ -10,23 +10,24 @@
         let reg = /[0-9]+/g
         id_user.value = user_input.value.match(reg)?.join('')
         
-        console.log(id_user.value)
-
         if (id_user.value == null) {
             nullInputFlag.value = true
             submitFlag.value = false
         } else {
             nullInputFlag.value = false
             submitFlag.value = true
+            getUserInfo(id_user.value)
         }
+    }
 
-        
-        // if () {
-        //     nullInputFlag.value = true
-        // } else {
-        //     nullInputFlag.value = false
-        //     submitFlag.value = true
-        // }
+
+    async function getUserInfo (id: number) {
+        const { data} = await $fetch('/api/getDataVK', {
+            method: 'POST',
+            body: { id: id },
+        })
+
+        console.log(data.id)
     }
 </script>
 
