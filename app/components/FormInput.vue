@@ -7,9 +7,11 @@
     
     function submitForm() {
         let [link, id] = user_input.value.split('id')
-        let reg = /^[0-9]+$/g
+        let reg = /[0-9]+/g
         id_user.value = user_input.value.match(reg)?.join('')
+        
         console.log(id_user.value)
+
         if (id_user.value == null) {
             nullInputFlag.value = true
             submitFlag.value = false
