@@ -35,6 +35,11 @@
         <label class="form-label text-white"><small>Введите ссылку на страницу или ID пользователя:</small></label>
         <input type="text" v-model="user_input" class="form-control form-id" id="" name="user_id" placeholder="https://vk.com/id890335 или просто 890335">
     </div>
+    
+    <div class="form-check form-switch mt-1 mb-2">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+        <label class="form-check-label text-light mb-3" for="flexSwitchCheckChecked"><small>Сохранить пользователя в списке избранных</small></label>
+    </div>
 
     <div class="alert alert-warning text-center p-2" v-if="nullInputFlag">
         Введите ID пользователя
