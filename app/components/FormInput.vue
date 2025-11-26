@@ -2,8 +2,12 @@
     let user_input = ref('')
     let submitFlag = ref(false)
     let nullInputFlag = ref(false)
-
+    let userInfo = ref()
     let id_user = ref()
+    let userNull = ref(false)
+    let success = ref(false)
+
+    // const props = defineProps(['foo'])
     
     function submitForm() {
         let [link, id] = user_input.value.split('id')
@@ -22,16 +26,38 @@
 
 
     async function getUserInfo (id: number) {
-        const { data} = await $fetch('/api/getDataVK', {
+        const data: any = await $fetch('/api/usersGet', {
             method: 'POST',
-            body: { id: id },
+            body: { id: id},
         })
 
-        console.log(data.id)
+        if (data) {
+            userNull.value = false
+            // submitFlag.value = false
+            // console.log(data.first_name)
+            // userInfo.value = data
+            setTimeout(() => {
+                success.value = true
+            }, 3000)
+            
+            setTimeout(() => {
+                navigateTo(`/user/id${id}`)
+            }, 6000)
+            
+        } else {
+            userNull.value = true
+            submitFlag.value = false
+            console.log('Ошибка')
+        }
     }
 </script>
 
 <template>
+    <div v-if="userInfo">
+        {{ userInfo.first_name }}
+    </div>
+
+    <div v-else>
     <div class="mb-3">
         <label class="form-label text-white"><small>Введите ссылку на страницу или ID пользователя:</small></label>
         <input type="text" v-model="user_input" class="form-control form-id" id="" name="user_id" placeholder="https://vk.com/id890335 или просто 890335">
@@ -46,21 +72,24 @@
         Введите ID пользователя
     </div>
 
+    <div class="alert alert-danger text-center mb-3" v-if="userNull">
+        Не удалось найти пользователя с таким ID
+    </div>
+
     <div v-if="!submitFlag">
         <FormButton @click="submitForm" />
     </div>
 
-    
-
-    <div class="alert alert-primary text-center mb-3" v-else>
+    <div class="alert alert-primary text-center mb-3" v-if="submitFlag && !success">
         Получаем информацию пользователя {{ id_user }}...
     </div>
 
-    <div class="d-flex flex-column flex-md-row">
-        <NuxtLink to="/about" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>О сервисе</small></NuxtLink>
-        <NuxtLink to="/info" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>Как это работает?</small></NuxtLink>
-        <NuxtLink to="/contacts" class="pe-3 text-white-50 link-underline link-underline-opacity-0"><small>Контакты</small></NuxtLink>
+    <div class="alert alert-success text-center mb-3" v-if="success">
+        Нашли пользователя, сейчас покажем данные.
     </div>
 
+    <FormLinks />
+    </div>
+   
     
 </template>

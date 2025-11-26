@@ -1,7 +1,17 @@
 <template>
     <div class="header">
-        <div class="header-content">
-            <FormID />
+        <div class="header-content container">
+                <div class="form-block d-flex flex-column justify-content-center align-items-center">
+                    <div class="form-content col-12 col-md-10">
+
+                        <div class="col-12 col-md-12">
+                            <div class="form-blick"></div>
+
+                            <h1 class="text-center fs-3 text-white">Иван Пирогов</h1>
+                        </div> 
+                    </div>
+                </div>
+            
         </div>
         
         <div class="header-layout"></div>

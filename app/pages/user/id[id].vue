@@ -4,6 +4,6 @@
 
 <template>
     <TopMenu />
-    <Header />
+    <UserInfoBlock />
 </template>   
 

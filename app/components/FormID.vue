@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
     <div class="form-block d-flex flex-column justify-content-center align-items-center">
         <div class="form-content col-12 col-md-5">

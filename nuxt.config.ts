@@ -10,8 +10,6 @@ export default defineNuxtConfig({
     'bootstrap-icons/font/bootstrap-icons.css'
   ],
 
-
-
   app: {
     head: {
       charset: 'utf-8',
