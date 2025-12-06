@@ -10,6 +10,6 @@
 
 <style>
 .btn-index {
-    padding: 15px;
+    padding: 15px !important;
 }
 </style>
